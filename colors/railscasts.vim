@@ -97,4 +97,4 @@ highlight SpellCap                  guifg=#D0D0FF ctermfg=189 guibg=NONE ctermbg
 highlight MatchParen                guifg=#FFFFFF ctermfg=15 guibg=#005f5f ctermbg=23
 
 " AKK hax
-highlight Folded                    ctermfg=11 ctermbg=8 guifg=#ffffff guibg=#a0a0a0
+highlight Folded                    ctermfg=11 ctermbg=8 guifg=#bbbbbb guibg=#505050

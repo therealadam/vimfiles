@@ -51,17 +51,6 @@ set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
-" Tab mappings.
-map <leader>tt :tabnew<cr>
-map <leader>te :tabedit
-map <leader>tc :tabclose<cr>
-map <leader>to :tabonly<cr>
-map <leader>tn :tabnext<cr>
-map <leader>tp :tabprevious<cr>
-map <leader>tf :tabfirst<cr>
-map <leader>tl :tablast<cr>
-map <leader>tm :tabmove
-
 " Uncomment to use Jamis Buck's file opening plugin
 "map <Leader>t :FuzzyFinderTextMate<Enter>
 "map <Leader>b :FuzzyFinderBuffer<Enter>
@@ -80,7 +69,7 @@ vnoremap / /\v
 
 set ignorecase
 set smartcase
-set gdefault " replace globaly by default
+set gdefault " replace globally by default
 set showmatch
 
 " Line wrapping for great good
@@ -116,4 +105,8 @@ au BufRead,BufNewFile Gemfile        set ft=ruby
 
 " add homebrew to my path
 let $PATH="/Users/adam/dev/homebrew/bin:/Users/adam/dev/homebrew/sbin:/Users/adam/dev/cassandra/bin:/usr/local/mysql/bin:/Users/adam/dev/dotfiles/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"
+
+" Tweak NERDTree
+let NERDTreeHijackNetrw=0
+let NERDTreeQuitOnOpen=1
 
