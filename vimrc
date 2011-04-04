@@ -52,7 +52,12 @@ set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%{SyntasticStatuslineFlag()}%=%-16(\ %l,%c-%v\ %)%P
 
-colorscheme vwilight
+" colorscheme vwilight
+if has('gui_running')
+  set background=light
+else
+  set background=dark
+endif
 
 " Uncomment to use Jamis Buck's file opening plugin
 map <Leader>ft :FuzzyFinderTextMate<Enter>
@@ -105,7 +110,7 @@ au BufRead,BufNewFile Capfile        set ft=ruby
 au BufRead,BufNewFile Gemfile        set ft=ruby
 
 " add homebrew to my path
-let $PATH="/Users/adam/dev/homebrew/bin:/Users/adam/dev/homebrew/sbin:/Users/adam/dev/cassandra/bin:/usr/local/mysql/bin:/Users/adam/dev/dotfiles/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"
+let $PATH="/Users/adam/Develop/homebrew/bin:/Users/adam/Develop/homebrew/sbin:/Users/adam/Develop/cassandra/bin:/usr/local/mysql/bin:/Users/adam/Develop/dotfiles/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"
 
 " Tweak NERDTree
 " let NERDTreeHijackNetrw=0
@@ -134,10 +139,10 @@ autocmd BufReadPost *
       \   exe "normal! g`\"" |
       \ endif
 
-autocmd FileType html,css,scss setlocal ts=2 sts=2 sw=2 expandtab foldtype=syntax
-autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab foldtype=syntax
+autocmd FileType html,css,scss setlocal ts=2 sts=2 sw=2 expandtab foldtype=indent
+autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab foldtype=indent
 autocmd FileType markdown setlocal wrap linebreak nolist
-autocmd BufNewFile,BufRead *.rss setfiletype xml foldtype=syntax
+autocmd BufNewFile,BufRead *.rss setfiletype xml foldtype=indent
 
 ".pml is automatically set to 'promela'. Override to use XML
 " lifted from: https://github.com/tpope/vim-markdown/blob/34e28b3f6f6d702ff2963b8196eccae9344ed4bc/ftdetect/markdown.vim
@@ -162,3 +167,11 @@ imap <C-a> <C-o>I
 " Let's ctag, dude.
 " Consider copping this: http://stackoverflow.com/questions/4539265/regenerate-ctags-in-vim-using-rvm
 map <leader>ct :!ctags -R .<cr>
+
+augroup filetypedetect 
+  au BufNewFile,BufRead *.pig set filetype=pig syntax=pig 
+augroup END 
+
+au BufRead,BufNewFile *.thrift set filetype=thrift
+" au! Syntax thrift source ~/.vim/thrift.vim
+

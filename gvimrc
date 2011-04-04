@@ -4,7 +4,7 @@
 " set guifont=Meslo\ LG\ M\ DZ:h12            " Font family and font size.
 " set guifont=Inconsolata:h14
 " set guifont=Bitstream\ Vera\ Sans\ Mono:h12
-set guifont=Meslo\ LG\ M\ DZ:h13
+set guifont=Meslo\ LG\ S\ DZ:h14
 set antialias                     " MacVim: smooth fonts.
 set encoding=utf-8                " Use UTF-8 everywhere.
 set guioptions-=T                 " Hide toolbar.
@@ -14,7 +14,11 @@ set lines=60 columns=85          " Window dimensions.
 " colorscheme github
 " colorscheme railscasts
 " colorscheme vwilight
-colorscheme tir_black
+" colorscheme tir_black
+
+" Solarized is well thought-out and thus has actual configuration
+set background=light
+colorscheme solarized
 
 " my workflow
 function AKwide()
