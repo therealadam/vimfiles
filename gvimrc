@@ -21,20 +21,20 @@ set background=light
 colorscheme solarized
 
 " my workflow
-function AKwide()
+function! AKwide()
   set columns=170
 endfunction
 
-function AKnarrow()
+function! AKnarrow()
   set columns=85
 endfunction
 
-function AKchunky()
+function! AKchunky()
   set guifont=Meslo\ LG\ M\ DZ:h13
   set lines=80
 endfunction
 
-function AKskinny()
+function! AKskinny()
   set guifont=Meslo\ LG\ M\ DZ:h12
   set lines=65
 endfunction
