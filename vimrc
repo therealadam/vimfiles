@@ -166,12 +166,6 @@ autocmd BufNewFile,BufRead *.pml
       \   setf xml |
       \ endif
 
-" Speed up buffer switching
-map <C-k> <C-W>k
-map <C-j> <C-W>j
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-
 " Insert mode mappings
 " emacs style jump to end of line
 imap <C-e> <C-o>A
